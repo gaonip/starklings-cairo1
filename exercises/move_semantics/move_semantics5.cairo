@@ -3,13 +3,13 @@
 // adding, changing or removing any of them.
 // Execute `starklings hint move_semantics5` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
 use array::ArrayTrait;
 #[test]
 fn main() {
     let mut a = ArrayTrait::new();
+    pass_by_snapshot(@a);
+    pass_by_snapshot(ref a);
     let mut b = pass_by_value(a);
-    pass_by_ref(ref a);
     pass_by_ref(ref b);
     pass_by_snapshot(@a);
 }
